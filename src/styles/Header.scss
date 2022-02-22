@@ -1,0 +1,19 @@
+@import "./vars";
+
+.titles {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+  }
+  .titles img {
+    width: 194px;
+    height: 66px;
+  }
+  .titles p {
+    font-size: $lg;
+    line-height: 25px;
+    color: $white;
+    font-weight: 700;
+  }
