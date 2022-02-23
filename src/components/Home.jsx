@@ -5,6 +5,7 @@ import Header from "./Header";
 import Filter from "./Filter";
 
 const Home = () => {
+
   return (
     <div className="home-container">
       <AccionesHeader />

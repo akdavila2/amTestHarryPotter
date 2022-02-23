@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 const useData = (endPoint) => {
   const [ready, setReady] = useState();
@@ -20,6 +20,7 @@ const useData = (endPoint) => {
   };
   useEffect(() => {
     getData();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return [ready, data, fetching];
 };

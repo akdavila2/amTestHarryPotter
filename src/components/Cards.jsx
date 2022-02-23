@@ -1,15 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import PreLoad from "./PreLoad";
 import Student from "./Student";
-//import profilePic from "../assets/prfile pic.png";
-
 
 import useData from './useData';
 
 const Cards = () => {
   
   const[ready, data, fetching]= useData("students");
-  console.log(1, ready, data, fetching)
+  console.log(1, ready, data, fetching);
   if(fetching)return <PreLoad />
 
 // const items= data.map(student=><Student  key={student.name} student= {student} />);
