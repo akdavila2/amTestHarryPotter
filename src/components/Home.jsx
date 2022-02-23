@@ -7,11 +7,10 @@ import Filter from "./Filter";
 const Home = () => {
   return (
     <div className="home-container">
-   <AccionesHeader />
-    <Header />
-     <Filter />
+      <AccionesHeader />
+      <Header />
+      <Filter />
       <Cards />
-
     </div>
   );
 };

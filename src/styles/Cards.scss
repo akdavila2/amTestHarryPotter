@@ -1,86 +1,99 @@
 @import "./vars";
 
-
 .cards-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 40px;
     place-content: center;
-    margin: 5vh ;
+    margin: 5vh;
     box-sizing: border-box;
-    
+    grid-gap: 40px;
+}
+.content-card {
+  width: 100%;
+  height: 28vh;
+  display: flex;
+  box-sizing: border-box;
+  justify-content: center;
+  place-content: center;
+  &.content-card--gryffindor .card-pic {
+    background: $home-gryffindor;
   }
-  .content-card {
-    width: 515px;
-    height: 265px;
-    display: flex;
-    box-sizing: border-box;
-    padding: 5px;
-    justify-content: center;
+  &.content-card--slytherin .card-pic {
+    background: $home-slytherin;
+  }
+  &.content-card--hufflepuff .card-pic {
+    background: $home-hufflepuff;
+  }
+  &.content-card--ravenclaw .card-pic {
+    background: $home-ravenclaw;
   }
   .card-pic {
-    background: $home-gryffindor;
     border-radius: 16px 0 0 16px;
-    width: 210px;
+    width: 30%;
     display: flex;
     align-items: center;
     justify-content: center;
+    
   }
-  .card-pic img {
-    border-radius: 50%;
-  }
-  .card-info {
-    background-color: $white;
-    border-radius: 0 16px 16px 0;
-    width: 305px;
-    display: flex;
-  }
-  .card-info ul {
-    list-style: none;
-    padding: 16px;
-    margin: 0;
-    width: 100%;
-    max-height: 265px;
-  }
-  
-  .card-info .state-student {
-    display: flex;
-    justify-content: space-between;
-  }
-  .state-student span {
-    color: $third-font;
-    font-weight: 600;
-    font-size: $sm;
-    line-height: 19px;
-  }
-  .info-container {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin: 0;
-    line-height: 27px;
-  }
-  .card-info h3 {
-    color: $secondary-font;
-    font-weight: 600;
-    font-size: $md;
-    line-height: 46px;
-    margin: 0;
-    padding: 12px 0;
-  }
-  .card-form .clave {
-    color: $quarter-font;
-    font-weight: bold;
-    font-size: $sm;
-    margin: 0;
-  }
-  .card-form span {
-    color: $quarter-font;
-    font-weight: 400;
-    font-size: $sm;
-  }
-  @media (max-width: 393px){
+}
 
+.card-pic img {
+  border-radius: 50%;
+  width: 169px;
+  height: 169px;
+}
+.card-info {
+  background-color: $white;
+  border-radius: 0 16px 16px 0;
+  width: 70%;
+  display: flex;
+}
+.card-info ul {
+  list-style: none;
+  padding: 16px;
+  margin: 0;
+  width: 100%;
+  max-height: 265px;
+}
+
+.card-info .state-student {
+  display: flex;
+  justify-content: space-between;
+}
+.state-student span {
+  color: $third-font;
+  font-weight: 600;
+  font-size: $sm;
+  line-height: 19px;
+}
+.info-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  line-height: 27px;
+}
+.card-info h3 {
+  color: $secondary-font;
+  font-weight: 600;
+  font-size: $md;
+  line-height: 46px;
+  margin: 0;
+  padding: 12px 0;
+}
+.card-form .clave {
+  color: $quarter-font;
+  font-weight: bold;
+  font-size: $sm;
+  margin: 0;
+}
+.card-form span {
+  color: $quarter-font;
+  font-weight: 400;
+  font-size: $sm;
+}
+@media (max-width: 393px) {
   .content-card {
     flex-direction: column;
     height: 181px;
@@ -90,11 +103,12 @@
     width: 100%;
     border-radius: 16px 16px 0 0;
   }
+
   .card-info {
     width: 100%;
     border-radius: 0px 0px 16px 16px;
   }
-  .card-form{
-      display: none;
+  .card-form {
+    display: none;
   }
-  }
+}
