@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
 
 const useData = (endPoint) => {
-  const [ready, setReady] = useState();
   const [fetching, setFetching] = useState(true);
   const [data, setData] = useState([]);
- 
+
   const API = `https://api-eromexico.herokuapp.com/${endPoint}`;
   const getData = async () => {
     try {
@@ -12,7 +11,7 @@ const useData = (endPoint) => {
       const data = await response.json();
       console.log(data);
       setData(data);
-      setReady(false);
+
       setFetching(false);
     } catch (error) {
       console.error("Generated error", error);
@@ -20,9 +19,9 @@ const useData = (endPoint) => {
   };
   useEffect(() => {
     getData();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-  return [ready, data, fetching];
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [endPoint]);
+  return [data, fetching];
 };
 
 export default useData;

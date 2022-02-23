@@ -1,52 +1,51 @@
 import React from "react";
 import iconFavCard from "../assets/Rectangle.png";
-
-const Staff = ({ staff }) => {
-    const casa = {
-        gryffindor: "gryffindor",
-        slytherin: "slytherin",
-        ravenclaw: "ravenclaw",
-        hufflepuff: "hufflepuff",
-      };
-      
-      const house= staff.house.toLowerCase();
-      const cls = `content-card${
-        casa[house] ? ` content-card--${house}` : ""
-      }`;
+const Card = ({ item }) => {
+  const casa = {
+    gryffindor: "gryffindor",
+    slytherin: "slytherin",
+    ravenclaw: "ravenclaw",
+    hufflepuff: "hufflepuff",
+  };
+  const house = item.house.toLowerCase();
+  const alive = item.alive;
+  let cls = `content-card${casa[house] ? ` content-card--${house}` : ""}`;
+  let clsInfo=   (alive) ?  `card-info`: `card-info content-card--alive`;
+  console.log(alive);
   return (
     <div className={cls}>
       <div className="card-pic">
-        <img src={`${staff.image}`} alt={`${staff.name}`} />
+        <img src={`${item.image}`} alt={`${item.name}`} />
       </div>
-      <div className="card-info">
+      <div className={clsInfo}>
         <ul>
           <section className="card-header">
-            <li className="state-staff">
+            <li className="state-item">
               <span>
-                {`${staff.alive === false ? "MUERTO" : "VIVO"}`}/ STAFF
+                {`${item.alive === false ? "MUERTO" : "VIVO"}`}/ ESTUDIANTE
               </span>
               <img src={iconFavCard} alt="icono favorito" />
             </li>
             <li>
-              <h3>{`${staff.name}`}</h3>
+              <h3>{`${item.name}`}</h3>
             </li>
           </section>
           <section className="card-form">
             <li className="info-container">
               <p className="clave">Cumpleaños:</p>
-              <span>{`${staff.dateOfBirth}`}</span>
+              <span>{`${item.dateOfBirth}`}</span>
             </li>
             <li className="info-container">
               <p className="clave">Género:</p>
-              <span>{`${staff.gender}`}</span>
+              <span>{`${item.gender}`}</span>
             </li>
             <li className="info-container">
               <p className="clave">Color de ojos:</p>
-              <span>{`${staff.eyeColour}`}</span>
+              <span>{`${item.eyeColour}`}</span>
             </li>
             <li className="info-container">
               <p className="clave">Color de pelo:</p>
-              <span>{`${staff.hairColour}`}</span>
+              <span>{`${item.hairColour}`}</span>
             </li>
           </section>
         </ul>
@@ -55,4 +54,4 @@ const Staff = ({ staff }) => {
   );
 };
 
-export default Staff;
+export default Card;

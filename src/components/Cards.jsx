@@ -1,20 +1,25 @@
-import React from "react";
+import React, {useState} from "react";
 import PreLoad from "./PreLoad";
-import Student from "./Student";
+import Card from "./Card";
 
 import useData from './useData';
+import Filter from './Filter';
 
 const Cards = () => {
+  const[view, setView]= useState("students");
   
-  const[ready, data, fetching]= useData("students");
-  console.log(1, ready, data, fetching);
-  if(fetching)return <PreLoad />
+  const[data, fetching]= useData(view);
 
-// const items= data.map(student=><Student  key={student.name} student= {student} />);
+  if(fetching) return <PreLoad />;
+
+// const items= data.map(student=><Student key={student.name} student= {student} />);
   return (
+    <>
+    <Filter setView={setView}/>
     <section className="cards-container">
-      {data.map(student=><Student  key={student.name} student= {student} />)}
+      {data.map(item=><Card  key={item.name} item= {item} />)}
     </section>
+    </>
   );
 };
 

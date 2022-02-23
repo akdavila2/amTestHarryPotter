@@ -1,0 +1,9 @@
+@import "./vars";
+.modal-container {
+  background-color: $white;
+  display: grid;
+  max-width: 50%;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 50px 50px 50px 50px 50px 50px 50px;
+}
+
