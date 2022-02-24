@@ -1,10 +1,26 @@
 @import "./vars";
+.modal-shadow{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  background-color: rgba(0,0,0, .7);
+  .modal-container{
+    max-width: 600px;
+    width: 100%;
+  }
+}
 .modal-container {
   background-color: $white;
   display: flex;
-  max-width: 50%;
+  width: 100%;
   flex-direction: column;
   justify-content: center;
+  border-radius: 20px;
   .modal-title {
     display: flex;
     justify-content: space-between;
@@ -22,14 +38,23 @@
     padding: 10px;
     justify-content: center;
     .form-section {
-      display: flex;
-      justify-content: flex-start;
-      width: 100%;
-      margin-bottom: 15px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      
+     
       .section-div {
+        display: grid;
         width: 100%;
-        label {
-          margin-bottom: 15px;
+        margin-bottom: 12px;
+     
+        .form-radio{
+          display: flex;
+          gap: 2px;
+          
+       .input-radio{
+         display: flex;
+        
+       }
         }
       }
     }
@@ -42,18 +67,27 @@
       font-size: $sm;
       margin-bottom: 5px;
       outline: none;
-      height: 73px;
-      width: 30%;
+      height: 43px;
+      width: 80%;
+      background-color: rgba(38, 50, 56,0.1 );
     }
 
     .radio {
       height: 15px;
       width: 15px;
+      font-size: 12px;
     }
     .content-btn {
       display: flex;
       justify-content: center;
       margin: 20px;
     }
+  }
+
+
+}
+@media (min-width: 395px) {
+  .modal-container{
+    width: 50%;
   }
 }

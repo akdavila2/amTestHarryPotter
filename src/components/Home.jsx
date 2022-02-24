@@ -3,7 +3,6 @@ import Cards from "./Cards";
 import AccionesHeader from "./AccionesHeader";
 import Header from "./Header";
 
-
 const Home = () => {
   return (
     <div className="home-container">
