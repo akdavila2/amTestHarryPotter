@@ -1,5 +1,5 @@
 # Proyecto de Harry Potter
-###Preambulo del proyecto:
+### Preambulo del proyecto:
 Proyecto con tematica de Harry Potter, en el cual puedes visualizar datos de los estudiantes y maestros segun la casa a la que pertenecen, y si ellos aun se encuentran vivos o muertos, de igual manera si asi deseas puedes agregar un personaje o agregar a favoritos el personaje que desees.
 
 Herramientas utilizadas: 
