@@ -19,7 +19,7 @@ Herramientas utilizadas:
 Fue un proyecto para mi retador, debido a todos los detalles que habia que tener en cuenta a nivel visual, lo cual conlleva a una logica que estuvo interesante poder resolver cada bloqueo que se me presentaba, el tema me gusto al igual que la propuesta de diseño dada.
 
 ### Si hubieras tenido mas tiempo que hubieras hecho
-Me hubiera gustado seguir las buenas practicas a la hora de llevar a cabo un desarrollo implementando pruebas unitarias, pero no me dio tiempo para realizarlas, lo cual lo tengo presente para seguir estudiando el tema para agregarlo en próximos proyectos. 
+Me hubiera gustado seguir las buenas practicas a la hora de llevar a cabo un desarrollo implementando pruebas unitarias, pero no me dio tiempo para realizarlas, lo cual lo tengo presente para seguir estudiando el tema para agregarlo en próximos proyectos. Adicionalmente darle funcionalidad a el boton de favoritos.
 
 ### Problemas encontrados en la realización del proyecto.
 Wow, se presentaron varios problemas, a nivel de la logica de la ejecucion del proyecto, como de la vista y tambien con el repositorio debido a que yo no clone el repositorio sino lo forked, luego no me permitio hacer pull request a mi rama master,entonces tuve que crear un nuevo repo, clonar el repositorio y subirlo. El repo inicial lo pueden encontrar aca la ultima rama a la que le hice push fue `componentmodal` link: https://github.com/akdavila2/amTest/tree/componentmodal.
