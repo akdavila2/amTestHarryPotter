@@ -24,7 +24,7 @@ Me hubiera gustado seguir las buenas practicas a la hora de llevar a cabo un des
 ### Problemas encontrados en la realización del proyecto.
 Wow, se presentaron varios problemas, a nivel de la logica de la ejecucion del proyecto, como de la vista y tambien con el repositorio debido a que yo no clone el repositorio sino lo forked, luego no me permitio hacer pull request a mi rama master,entonces tuve que crear un nuevo repo, clonar el repositorio y subirlo. El repo inicial lo pueden encontrar aca la ultima rama a la que le hice push fue `componentmodal` link: https://github.com/akdavila2/amTest/tree/componentmodal.
 
-Los demas retos que se me presentaron a medida que iba trabajando fueron primeramente con el renderizado segun estudiantes o staff, posteriormente con la aplicacion del diseño de las tarjetas segun la casa o el estado (vivo o muerto), el componente de modal para agregar un nuevo personaje y la libreria de redux nunca antes utilizada empezar a entenderla. Pero sin duda lo que me resulto mas complicado fue el modal.
+Los demas retos que se me presentaron a medida que iba trabajando fueron primeramente con el renderizado segun estudiantes o staff, posteriormente con la aplicacion del diseño de las tarjetas segun la casa o el estado (vivo o muerto), el componente de modal para agregar un nuevo personaje y la libreria de redux nunca antes utilizada empezar a entenderla. Pero sin duda lo que me resulto mas complicado fue el modal, y no logre la funcionalidad de favoritos.
 
 
 ### La pagina se encuentra desplegada en el siguiente link:

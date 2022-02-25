@@ -1,5 +1,5 @@
 @import "./vars";
-.modal-shadow{
+.modal-shadow {
   position: fixed;
   top: 0;
   right: 0;
@@ -8,8 +8,8 @@
   display: flex;
   place-items: center;
   justify-content: center;
-  background-color: rgba(0,0,0, .7);
-  .modal-container{
+  background-color: rgba(0, 0, 0, 0.7);
+  .modal-container {
     max-width: 600px;
     width: 100%;
   }
@@ -26,6 +26,9 @@
     justify-content: space-between;
     padding: 15px;
     font-weight: 600;
+    margin: 22px;
+    align-items: center;
+    box-sizing: border-box;
     img {
       width: 30px;
       height: 30px;
@@ -37,27 +40,38 @@
     flex-direction: column;
     padding: 10px;
     justify-content: center;
+    margin-left: 10px;
     .form-section {
       display: grid;
       grid-template-columns: 1fr 1fr;
+      align-items: baseline;
       
-     
+
       .section-div {
         display: grid;
         width: 100%;
         margin-bottom: 12px;
-     
-        .form-radio{
+      }
+      select{
+        background-color: rgba(38, 50, 56, 0.1);
+        width: 90%;
+   height: 46px;
+   border-left: 0px;
+   border-top: 0px;
+   border-right: 0px;
+   border-bottom: 1px solid $line-input;
+      }
+
+        .form-radio {
           display: flex;
           gap: 2px;
-          
-       .input-radio{
-         display: flex;
-        
-       }
+
+          .input-radio {
+            display: flex;
+          }
         }
       }
-    }
+   
 
     input {
       border-left: 0px;
@@ -68,8 +82,8 @@
       margin-bottom: 5px;
       outline: none;
       height: 43px;
-      width: 80%;
-      background-color: rgba(38, 50, 56,0.1 );
+      width: 90%;
+      background-color: rgba(38, 50, 56, 0.1);
     }
 
     .radio {
@@ -83,11 +97,9 @@
       margin: 20px;
     }
   }
-
-
 }
 @media (min-width: 395px) {
-  .modal-container{
+  .modal-container {
     width: 50%;
   }
 }

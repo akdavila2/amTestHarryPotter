@@ -4,8 +4,6 @@ import { createPortal } from "react-dom";
 import { ModalContent } from "./ModalContent";
 
 const Modal = ({ visible, onClose }) => {
-  console.log("modal", visible);
-
   const [container, setContainer] = useState();
   const getNode = () => {
     const target = document.getElementById("modal");
