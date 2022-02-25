@@ -1,48 +1,51 @@
 import React, { useState } from "react";
 import iconClose from "../assets/iconclose.png";
+import axios from "axios";
+import unique from "unique";
 
 export const ModalContent = ({ onClose }) => {
   const [form, setForm] = useState({
+    id: unique(),
     name: "",
     dateOfBirth: "",
     eyeColour: "",
     hairColour: "",
     gender: "",
-    hogwartsStudent: "",
+    hogwartsStudent: null,
+    hogwartsStaff: null,
     image: "",
     house: "",
-    alive: "",
+    alive: null,
   });
 
-  const handleChange = (target) => {
+  const handleChange = ({ target }) => {
     setForm({
       ...form,
       [target.name]: target.value,
     });
+    console.log(form);
   };
-  // const endPoint= (e)=>{
-  //   if(e.currentTarget.dataset.radio)
-  // }
-  const API = `https://api-eromexico.herokuapp.com/students`;
-  const handlePostData = async () => {
-    const location = window.location.hostname;
 
-    const settings = {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-    };
-    try {
-      const fetchResponse = await fetch(API, settings);
-      const data = await fetchResponse.json();
-      console.log("data", data);
-      return data;
-    } catch (e) {
-      console.log(e);
-    }
+  const handlePostData = async (e) => {
+    e.preventDefault();
+    console.log("estoy aqui")
+    const apiUrl = `https://api-eromexico.herokuapp.com/students`;
+    await axios
+      .post(apiUrl, form)
+      .then((response) => {
+        const allResponse = response.data;
+        console.log('allResponse', allResponse);
+        console.log("estoy aqui")
+        
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+      window.location.reload(true)
   };
+  //  const attrs = {};
+  //  const inComplete=Object.keys(form).find(item=>["", undefined].includes(item))
+  //     if (inComplete.length>0) attrs.disabled = true;
 
   return (
     <div className="modal-shadow">
@@ -51,16 +54,16 @@ export const ModalContent = ({ onClose }) => {
           <p>Agrega un personaje</p>
           <img src={iconClose} alt="icon close" onClick={onClose} />
         </div>
-        <form onSubmit={handlePostData}>
+        <form >
           <div className="form-section">
             <section className="section-div">
-              <label htmlFor="name">NOMBRE</label>
-              <input id="name" type="text" onChange={handleChange} required />
+              <label>NOMBRE</label>
+              <input name="name" type="text" onChange={handleChange} required />
             </section>
             <section className="section-div">
-              <label htmlFor="cumpleanos">CUMPLEAÑOS</label>
+              <label>CUMPLEAÑOS</label>
               <input
-                id="cumpleanos"
+                name="dateOfBirth"
                 type="text"
                 onChange={handleChange}
                 required
@@ -69,57 +72,69 @@ export const ModalContent = ({ onClose }) => {
           </div>
           <div className="form-section">
             <section className="section-div">
-              <label htmlFor="ojos">COLOR DE OJOS</label>
-              <input id="ojos" type="text" onChange={handleChange} required />
+              <label>COLOR DE OJOS</label>
+              <input
+                name="eyeColour"
+                type="text"
+                onChange={handleChange}
+                required
+              />
             </section>
             <section className="section-div">
-              <label htmlFor="pelo">COLOR DE PELO</label>
-              <input id="pelo" type="text" onChange={handleChange} required />
+              <label>COLOR DE PELO</label>
+              <input
+                name="hairColour"
+                type="text"
+                onChange={handleChange}
+                required
+              />
             </section>
           </div>
           <div className="form-section">
             <section className="section-div">
-              <label htmlFor="genero">GENERO</label>
+              <label>GENERO</label>
 
               <div className="form-radio">
                 <input
                   className="radio"
-                  id="genero1"
                   type="radio"
-                  value="Mujer"
+                  value="female"
                   onChange={handleChange}
+                  name="gender"
+                  checked={form.gender === "female"}
                 />
                 Mujer
                 <input
                   className="radio"
-                  id="genero2"
                   type="radio"
-                  value="Hombre"
+                  value="male"
+                  name="gender"
                   onChange={handleChange}
+                  checked={form.gender === "male"}
                 />
                 Hombre
               </div>
             </section>
             <section className="section-div">
-              <label htmlFor="genero">POSICION</label>
+              <label>POSICION</label>
 
               <div className="form-radio">
                 <input
                   className="radio"
-                  id="posicion"
+                  name="hogwartsStudent"
                   type="radio"
-                  value="Estudiante"
+                  value={true}
                   onChange={handleChange}
-                  // data-radio="students"
+                  checked={form.hogwartsStudent === true}
                 />
                 Estudiante
                 <input
                   className="radio"
-                  id="posicion"
+                  name="hogwartsStaff"
                   type="radio"
-                  value="Staff"
+                  value={true}
                   onChange={handleChange}
-                  // data-radio="staff"
+                  checked={form.hogwartsStaff === true}
                 />
                 Staff
               </div>
@@ -127,76 +142,37 @@ export const ModalContent = ({ onClose }) => {
           </div>
           <div className="form-section">
             <section className="section-div">
-              <label htmlFor="foto">FOTOGRAFIA</label>
-              <input id="FOTO" type="url" onChange={handleChange} required />
+              <label>FOTOGRAFIA</label>
+              <input name="image" type="url" onChange={handleChange} required />
             </section>
             <section className="section-div">
-              <label htmlFor="estado">ESTADO</label>
+              <label>Vivo</label>
 
-              <div className="form-radio">
-                <input
-                  className="radio"
-                  id="estado"
-                  type="radio"
-                  value="Vivo"
-                  onChange={handleChange}
-                />
-                Vivo
-                <input
-                  className="radio"
-                  id="estado1"
-                  type="radio"
-                  value="Muerto"
-                  onChange={handleChange}
-                />
-                Muerto
-              </div>
+              <select name="alive" onClick={handleChange}>
+                <option value={true}>Si</option>
+                <option value={false}>No</option>
+              </select>
             </section>
           </div>
+          <div className="form-section">
           <section className="section-div">
-            <label htmlFor="casa">CASA</label>
+            <label>CASA</label>
 
-            <div className="form-radio">
-              <input
-                className="radio"
-                id="casa"
-                type="radio"
-                value="Gryffindor"
-                onChange={handleChange}
-              />
-              Gryffindor
-              <input
-                className="radio"
-                id="casa1"
-                type="radio"
-                value="Slytherin"
-                onChange={handleChange}
-              />
-              Slytherin
-              <input
-                className="radio"
-                id="casa2"
-                type="radio"
-                value="Ravenclaw"
-                onChange={handleChange}
-              />
-              Ravenclaw
-              <input
-                className="radio"
-                id="casa3"
-                type="radio"
-                value="Hufflepuff"
-                onChange={handleChange}
-              />
-              Hufflepuff
-            </div>
+            <select name="house" onClick={handleChange}>
+              <option value="Gryffindor">Gryffindor</option>
+              <option value="Slytherin">Slytherin</option>
+              <option value="Ravenclaw">Ravenclaw</option>
+              <option value="Hufflepuff">Hufflepuff</option>
+            </select>
           </section>
+          </div>
 
           <section className="content-btn">
             <button
+              // {...attrs}
               type="submit"
               className="primary-button"
-              onClick={() => console.log("clicking")}
+              onClick={handlePostData}
             >
               GUARDAR
             </button>
