@@ -9,14 +9,12 @@ const AccionesHeader = () => {
   const onClose = (event) => {
     event.stopPropagation();
     setVisible(false);
-    console.log(5, visible);
   };
   const handleOption = (event) => {
     event.preventDefault();
     setVisible(true);
-console.log(20)
   };
-  console.log(10, visible)
+
   return (
     <section className="action-header">
       <button className="btn-header" data-option="favorito">

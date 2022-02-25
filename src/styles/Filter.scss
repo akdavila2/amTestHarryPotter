@@ -21,6 +21,6 @@
     background-color: $hover-button;
   }
   &:active {
-    background-color: red;
+    background-color: $active-button;
   }
 }
