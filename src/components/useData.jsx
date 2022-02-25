@@ -9,7 +9,7 @@ const useData = (endPoint) => {
     try {
       const response = await fetch(API);
       const data = await response.json();
-      console.log(data);
+      //console.log(data);
       setData(data);
 
       setFetching(false);

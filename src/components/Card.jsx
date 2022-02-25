@@ -11,7 +11,7 @@ const Card = ({ item }) => {
   const alive = item.alive;
   let cls = `content-card${casa[house] ? ` content-card--${house}` : ""}`;
   let clsInfo=   (alive) ?  `card-info`: `card-info content-card--alive`;
-  console.log(alive);
+ 
   return (
     <div className={cls}>
       <div className="card-pic">
