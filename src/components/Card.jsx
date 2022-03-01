@@ -22,7 +22,7 @@ const Card = ({ item }) => {
           <section className="card-header">
             <li className="state-item">
               <span>
-                {`${item.alive === false || "false"? "MUERTO" : "VIVO"}`}/ {`${item.hogwartsStudent === false || "false"? "STAFF" : "ESTUDIANTE"}`}
+                 {`${item.alive === false ? "MUERTO" : "VIVO"}`}/ {`${item.hogwartsStudent === false ? "STAFF" : "ESTUDIANTE"}`}
               </span>
               <img src={iconFavCard} alt="icono favorito" />
             </li>
